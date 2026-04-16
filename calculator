@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculator</title>
+   <style>
+     body{
+    background-color: #1149AE;
+   
+}
+form{
+     text-align: center;
+    justify-content: center;
+    align-items: center;
+    border: solid;
+    width: 358px;
+    height: 200px;
+    background-color: #3EC0C2;
+    border-radius: 20px;
+}
+form:hover{
+    background-color: #2778D9;
+    transition: 0.5s;
+    box-shadow: 5px 5px 5px;
+}
+input{
+    background-color: bisque;
+    color: black;
+}
+input:hover{
+    background-color: burlywood;
+    transition: 0.5s;
+    box-shadow: 2px 2px 2px;
+}
+button{
+    background-color:cadetblue;
+    color: black;
+}
+button:hover{
+    background-color: cyan;
+    transition: 0.5s;
+    box-shadow: 2px 2px 2px;
+}
+   </style>
+  <script>
+    let firstnumber = document.querySelector("#numA").value;
+let secondNumber = document.querySelector("#numB").value;
+let result = document.querySelector("#resultArea").value;
+let symbol= document.querySelector("#symbol").value;
+
+function add(){
+result = firstnumber + secondNumber;
+resultArea.innerText = result;
+}
+function subtract(){
+    result = firstnumber - secondNumber;
+    resultArea.innerText = result;
+}
+function multiply(){
+    result = firstnumber * secondNumber;
+    resultArea.innerText = result;
+}
+function divide(){
+    result = firstnumber / secondNumber;
+    resultArea.innerText = result;
+}
+
+function main(){
+    if(symbol=='+'){
+        add()
+    }
+    else if(symbol=='X'){
+        multiply()
+    }
+    else if(symbol=='-'){
+        subtract()
+    }
+    else if(symbol=='/'){
+        divide()
+    }
+    else{
+        let msg =` ${symbol} not recognised`
+        console.error(msg);
+    }
+}
+  </script>
+</head>
+<body>
+    <form action="">
+   <input type="text" placeholder="firstnumber" id="numA"><br> 
+    <input type="text" placeholder="secondnumber" id="numB"><br> 
+    <select name="symbol" id="symbol" title="symbol">
+        <option value="1">+</option>
+            <option value="2">-</option>
+<option value="3">*</option>
+         <option value="4">/</option>
+    </select><br>
+    
+         <button onclick="main">Calculate</button>
+         <input type="text" id="resultarea" state="disable">
+    </form>
+</body>
+</html>
