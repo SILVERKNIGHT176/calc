@@ -1,9 +1,25 @@
 // let name1 = document.querySelector(n1).value;
 // let name2 = document.querySelector(n2).value;
 // let age = document.querySelector(age).value;
-// let grade = document.querySelector(grade).value;
-function portal(){
-    const portal = document.getElementById(`p`).value;
-    portal.innerHTML = `Admission successful. Welcome to Agape Academy!`;
-}
+// // let grade = document.querySelector(grade).value;
+// function portal(){
+//     const portal = document.getElementById(`p`).value;
+//     portal.innerHTML = `Admission successful. Welcome to Agape Academy!`;
+// }
 //html interface, css styling aspect, js logic - functions
+
+  const portal = document.getElementById('portal');
+        const successMessage = document.getElementById('submitted-message');
+
+        
+        portal.addEventListener('submit', function(event) {
+            
+           
+
+            
+            portal.style.display = 'none';
+
+            
+            successMessage.style.display = 'block';
+
+            alert("Admission successful!")});
